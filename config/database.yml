@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  user: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: bfs_development
+
+test:
+  <<: *default
+  database: bfs_test
+
+production:
+  encoding: unicode

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-4 m-auto pt-5">
+       <%- if notice || alert %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert alert-danger"><%= alert %></p>
+       <% end %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin' } ) do |f| %>
+            <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+            <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+            <%= f.button :submit, "Log in", class: 'btn btn-lg btn-primary btn-block' %>
+        <% end %>
+    </div>
+</div>
